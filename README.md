@@ -1,7 +1,7 @@
 # Gerenciador de Estoque 
 Trabalho Final da Disciplina Programação Mobile
 
-## Alunos:   
+## Alunos  
     Eos Xavier: 2022.1906.027-3
     Jerfferson Jorge Felizardo Júnior: 2022.1906.040-0
     
@@ -19,7 +19,18 @@ O aplicativo será desenvolvido com base em uma evolução do Trabalho 2: Contro
 
 - Banco de Dados: Serão armazenados os dados dos vendedores e dos objetos em estoque;
 
-- Interface Amigável: O aplicativo irá conter uma personalização de acordo com o tema. 
+- Interface Amigável: O aplicativo irá conter uma personalização de acordo com o tema.
+
+- Cores:
+    - StatusBarColor. (theme)
+    - Background. (xml do layout e color)
+    - Text. (color)
+    - Button.
+      
+- String:
+    - Todas as string dentro deste recurso deverá ser comentado e agrupado para ficar manutenível.
+ 
+- Menu: Menu com acesso às configurações do perfil do vendedor e aos objetos.
   
 - Camera: Os vendedores poderão utilizar a câmera para registrar fotos dos objetos;  **[Novidade]**
   - Imagens: Os vendedores poderão utilizar as fotos tiradas pela câmera para identificar os seus objetos em estoque; **[Novidade]**
