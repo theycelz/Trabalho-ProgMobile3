@@ -7,6 +7,8 @@ Trabalho Final da Disciplina Programação Mobile
     
 ## Visão Geral do Software
 
+O aplicativo foi desenvolvido para atender às necessidades de gerenciamento de estoque e controle de produtos, oferecendo funcionalidades avançadas, como a capacidade de adicionar imagens e informações detalhadas sobre os itens armazenados, destinados à venda. O cerne da proposta é proporcionar uma organização mais eficaz de mercadorias, além de simplificar a interação do usuário com seus produtos. Este aplicativo foi especialmente concebido para pequenos vendedores que carecem de uma solução prática e intuitiva para otimizar a logística de seus produtos.
+
 ## Papéis
 
 - Vendedor: Um vendedor poderá registrar os bens materiais os quais está vendendo, para poder controlar melhor o seu estoque. Dessa forma, ele terá permissões para criar, editar ou excluir dados sobre os seus objetos, tais como descrição, quantidade, valores e status de venda dos produtos. 
