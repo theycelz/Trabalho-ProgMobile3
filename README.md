@@ -17,7 +17,7 @@ O aplicativo foi desenvolvido para atender às necessidades de gerenciamento de 
 
 O aplicativo será desenvolvido com base em uma evolução do Trabalho 2: Controle de Patrimônio, trazendo a tona uma interatividade maior para com os seus usuários. Apesar de abordar uma outra temática dessa vez, sendo esta o gerenciamento de estoque, ele contém semelhanças através do armazenamento de determinado objeto. Abaixo serão descritos componentes utilizados no aplicativo e as novidades abordadas para este novo projeto.
 
-- Banco de Dados: Serão armazenados os dados dos vendedores e dos objetos em estoque;
+- Banco de Dados: Serão armazenados os dados dos vendedores, dos objetos em estoque e dos objetos que já foram vendidos;
 
 - Interface Amigável: O aplicativo irá conter uma personalização de acordo com o tema.
 
@@ -43,3 +43,6 @@ O aplicativo será desenvolvido com base em uma evolução do Trabalho 2: Contro
 
 - Acessibilidade: O aplicativo irá conter opção de light mode e dark mode. **[Novidade]**
 
+## Tecnologias
+
+Banco de Dados utilizado: RoomDataBase.
