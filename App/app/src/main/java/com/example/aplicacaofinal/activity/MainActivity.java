@@ -3,6 +3,7 @@ package com.example.aplicacaofinal.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,15 +48,16 @@ public class MainActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()){
-                                        Toast.makeText(MainActivity.this,
-                                                "Cadastro realizado!", Toast.LENGTH_SHORT).show();
-
+                                        Toast.makeText(getApplicationContext(), "Cadastro realizado!", Toast.LENGTH_SHORT).show();
+                                        MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sucesound);
+                                        mediaPlayer.start();
                                     } else {
                                         String erroExcecao = "";
                                         try {
                                             throw task.getException();
                                         }catch (FirebaseAuthWeakPasswordException e) {
                                             erroExcecao = "Digite uma senha mais forte";
+
                                         }catch (FirebaseAuthInvalidCredentialsException e){
                                             erroExcecao = "E-mail inválido";
                                         }catch(FirebaseAuthUserCollisionException e){
@@ -64,8 +66,9 @@ public class MainActivity extends AppCompatActivity {
                                             erroExcecao = "ao cadastrar usuário: " + e.getMessage();
                                             e.printStackTrace();
                                         }
-                                        Toast.makeText(MainActivity.this,
-                                                "Erro: "+ erroExcecao, Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Erro: " + erroExcecao, Toast.LENGTH_SHORT).show();
+                                        MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.erro);
+                                        mediaPlayer.start();
                                     }
                                     //direcionar após
                             }
@@ -76,11 +79,13 @@ public class MainActivity extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<AuthResult> task) {
                                             if(task.isSuccessful()){
-                                                Toast.makeText(MainActivity.this, "Logado com sucesso"
-                                            , Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(getApplicationContext(), "Logado com sucesso", Toast.LENGTH_SHORT).show();
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sucesound);
+                                                mediaPlayer.start();
                                             }else{
-                                                Toast.makeText(MainActivity.this, "Erro ao fazer login: " +task.getException(), Toast.LENGTH_SHORT).show();
-
+                                                Toast.makeText(getApplicationContext(), "Erro ao fazer login: " +task.getException(), Toast.LENGTH_SHORT).show();
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.erro);
+                                                mediaPlayer.start();
                                             }
                                         }
                                     }
