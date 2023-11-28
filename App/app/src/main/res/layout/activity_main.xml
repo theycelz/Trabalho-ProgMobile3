@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
-    android:background="@color/principal"
+    android:background="@color/azul2"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
 
     <ImageView
@@ -20,11 +19,12 @@
         app:srcCompat="@drawable/logo1" />
 
 
-
     <EditText
         android:id="@+id/editTextTextEmailAddress5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/bg_edit_text"
         android:ems="10"
         android:hint="E-Mail"
@@ -35,7 +35,9 @@
         android:id="@+id/editTextTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="-2dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/bg_edit_text"
         android:ems="10"
         android:hint="Senha"
@@ -73,6 +75,8 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@color/azul"
         android:text="Acessar"
         android:textColor="@color/black"
