@@ -45,4 +45,7 @@ O aplicativo será desenvolvido com base em uma evolução do Trabalho 2: Contro
 
 ## Tecnologias
 
-Banco de Dados utilizado: RoomDataBase.
+Banco de Dados utilizado: Firebase Firestore.
+Autenticação: Firebase Authentication
+Linguagem: Java
+Plataforma utilizada: Android Studio
