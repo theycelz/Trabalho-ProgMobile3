@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
-
 import com.example.aplicacaofinal.R;
 import com.example.aplicacaofinal.helper.ConfiguracaoFirebase;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), "Cadastro realizado!", Toast.LENGTH_SHORT).show();
                                         MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sucesound);
                                         mediaPlayer.start();
+                                        Intent intent = new Intent(MainActivity.this, MeusObjetosActivity.class);
+                                        startActivity(intent);
                                     } else {
                                         String erroExcecao = "";
                                         try {
@@ -85,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
                                                 Toast.makeText(getApplicationContext(), "Logado com sucesso", Toast.LENGTH_SHORT).show();
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sucesound);
                                                 mediaPlayer.start();
+                                                Intent intent = new Intent(MainActivity.this, MeusObjetosActivity.class);
+                                                startActivity(intent);
                                             }else{
                                                 Toast.makeText(getApplicationContext(), "Erro ao fazer login: " +task.getException(), Toast.LENGTH_SHORT).show();
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.erro);
@@ -103,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Preencha o E-mail!",Toast.LENGTH_SHORT).show();
                 }
             }
+
         });
     }
 
