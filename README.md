@@ -17,7 +17,7 @@ O aplicativo foi desenvolvido para atender às necessidades de gerenciamento de 
 
 O aplicativo será desenvolvido com base em uma evolução do Trabalho 2: Controle de Patrimônio, trazendo a tona uma interatividade maior para com os seus usuários. Apesar de abordar uma outra temática dessa vez, sendo esta o gerenciamento de estoque, ele contém semelhanças através do armazenamento de determinado objeto. Abaixo serão descritos componentes utilizados no aplicativo e as novidades abordadas para este novo projeto.
 
-- Banco de Dados: Serão armazenados os dados dos vendedores, dos objetos em estoque e dos objetos que já foram vendidos;
+- Banco de Dados: Serão armazenados os dados dos vendedores e dos objetos cadastrados por um vendedor;
 
 - Interface Amigável: O aplicativo irá conter uma personalização de acordo com o tema.
 
@@ -30,7 +30,7 @@ O aplicativo será desenvolvido com base em uma evolução do Trabalho 2: Contro
 - String:
     - Todas as string dentro deste recurso deverá ser comentado e agrupado para ficar manutenível.
  
-- Menu: Menu com acesso às configurações do perfil do vendedor e aos objetos.
+- Spinner: Menu com opções de situação dos objetos cadastrados e também para as categorias de objetos.
   
 - Camera: Os vendedores poderão utilizar a câmera para registrar fotos dos objetos;  **[Novidade]**
   - Imagens: Os vendedores poderão utilizar as fotos tiradas pela câmera para identificar os seus objetos em estoque; **[Novidade]**
@@ -41,7 +41,7 @@ O aplicativo será desenvolvido com base em uma evolução do Trabalho 2: Contro
 
 - Sons: O aplicativo conterá sons nas interações de sua navegabilidade. **[Novidade]**
 
-- Acessibilidade: O aplicativo irá conter opção de light mode e dark mode. **[Novidade]**
+- Acessibilidade: O aplicativo irá conter opção de light mode e dark mode. **[Novidade]** 
 
 ## Tecnologias
 
