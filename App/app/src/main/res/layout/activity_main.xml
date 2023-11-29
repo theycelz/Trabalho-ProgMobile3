@@ -9,7 +9,6 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
-
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="225dp"
