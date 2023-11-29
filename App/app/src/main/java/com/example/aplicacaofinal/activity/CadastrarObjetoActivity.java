@@ -21,8 +21,10 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.aplicacaofinal.R;
@@ -43,7 +45,8 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     byte foto[];
     private static final String IMAGE_DIRECTORY = "/camera2022";
-    private ImageView imagem1, imagem2, imagem3;
+
+    private Spinner campoSituacao, campoCategoria;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,7 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         inicializarComponentes();
+        carregarDadosSpinner();
 
         binding.btnTirarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,11 +83,30 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
         Log.d("salvar","salvarObjeto: " + valor);
     }
 
+    private void carregarDadosSpinner(){
+        //Inflando spinner para situção dos objetos
+        String [] situacao = getResources().getStringArray(R.array.situacao);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item, situacao);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        campoSituacao.setAdapter(adapter);
+
+        //Inflando spinner para categoria dos objetos
+        String [] categorias = getResources().getStringArray(R.array.categoria);
+        ArrayAdapter<String> adapterCategoria = new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item, categorias);
+
+        adapterCategoria.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        campoCategoria.setAdapter(adapterCategoria);
+    }
 
     private void inicializarComponentes(){
         campoTitulo = findViewById(R.id.editTitulo);
         campoDescricao = findViewById(R.id.editDescricao);
         campoValor = findViewById(R.id.editValor);
+        campoSituacao = findViewById(R.id.spinnerSituacao);
+        campoCategoria = findViewById(R.id.spinnerCategoria);
     }
 
     @Override
@@ -105,8 +128,8 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap bitmap = (Bitmap) extras.get("data");
-            binding.imageView7.setImageBitmap(resizeImage(bitmap,
-                    300, 600));
+            binding.imageObjetoCadastrado.setImageBitmap(resizeImage(bitmap,
+                    600, 600));
             saveImage(bitmap);
             Toast.makeText(CadastrarObjetoActivity.this, "Imagem Salva!",
                     Toast.LENGTH_SHORT).show();
@@ -123,7 +146,7 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
                     Toast.makeText(CadastrarObjetoActivity.this, "Imagem OK!",
                             Toast.LENGTH_SHORT).show();
                     // Print on screen
-                    binding.imageView7.setImageBitmap(resizeImage(bitmap, 300, 600));
+                    binding.imageObjetoCadastrado.setImageBitmap(resizeImage(bitmap, 300, 600));
                 } catch (IOException e) {
                     e.printStackTrace();
                     Toast.makeText(CadastrarObjetoActivity.this, "Falha!",
