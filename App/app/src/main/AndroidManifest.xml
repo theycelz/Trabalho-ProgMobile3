@@ -13,6 +13,14 @@
         android:theme="@style/Theme.AplicacaoFinal"
         tools:targetApi="31">
         <activity
+            android:name=".activity.CadastrarObjetoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MeusObjetosActivity"
+            android:exported="false"
+            android:label="@string/title_activity_meus_objetos"
+            android:theme="@style/Theme.AplicacaoFinal" />
+        <activity
             android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
