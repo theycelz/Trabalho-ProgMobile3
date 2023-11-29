@@ -146,7 +146,7 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
                     Toast.makeText(CadastrarObjetoActivity.this, "Imagem OK!",
                             Toast.LENGTH_SHORT).show();
                     // Print on screen
-                    binding.imageObjetoCadastrado.setImageBitmap(resizeImage(bitmap, 300, 600));
+                    binding.imageObjetoCadastrado.setImageBitmap(resizeImage(bitmap, 600, 600));
                 } catch (IOException e) {
                     e.printStackTrace();
                     Toast.makeText(CadastrarObjetoActivity.this, "Falha!",

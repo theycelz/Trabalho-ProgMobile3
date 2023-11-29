@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_cadastrar"
-        android:title="Cadastrar Objeto"></item>
+    <item android:id="@+id/menu_cadastrar" android:title="Cadastrar Objeto"></item>
     <item android:id="@+id/menu_sair"  android:title="Sair" ></item>
+    <item
+        android:id="@+id/op_escuro"
+        android:title="@string/escuro"/>
+    <item
+        android:id="@+id/op_claro"
+        android:title="@string/claro"/>
 </menu>
