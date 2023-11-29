@@ -21,6 +21,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.aplicacaofinal.R;
@@ -40,6 +41,7 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     byte foto[];
     private static final String IMAGE_DIRECTORY = "/camera2022";
+    private ImageView imagem1, imagem2, imagem3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
