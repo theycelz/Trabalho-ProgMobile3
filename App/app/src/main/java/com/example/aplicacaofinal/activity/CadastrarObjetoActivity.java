@@ -21,6 +21,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ import java.io.IOException;
 import java.util.Calendar;
 
 public class CadastrarObjetoActivity extends AppCompatActivity {
+    private EditText campoTitulo, campoDescricao, campoValor;
     private ActivityCadastrarObjetoBinding binding;
     private static final int PERMISSION_REQUEST_CODE = 200;
     static final int GALLERY = 2;
@@ -49,6 +51,8 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
 
         binding = ActivityCadastrarObjetoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        inicializarComponentes();
 
         binding.btnTirarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +73,19 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void salvarObjeto(View view){
+        String valor = campoValor.getText().toString();
+        Log.d("salvar","salvarObjeto: " + valor);
+    }
+
+
+    private void inicializarComponentes(){
+        campoTitulo = findViewById(R.id.editTitulo);
+        campoDescricao = findViewById(R.id.editDescricao);
+        campoValor = findViewById(R.id.editValor);
+    }
+
     @Override
     public void onResume() {
         super.onResume();
