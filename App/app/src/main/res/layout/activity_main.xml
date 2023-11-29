@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azul2"
+    android:background="@drawable/img_1"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
@@ -55,7 +55,8 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Logar" />
+            android:text="Logar"
+            android:textColor="@color/white"/>
 
         <Switch
             android:id="@+id/switch1"
@@ -67,7 +68,8 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cadastrar-se" />
+            android:text="Cadastrar-se"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
     <Button
