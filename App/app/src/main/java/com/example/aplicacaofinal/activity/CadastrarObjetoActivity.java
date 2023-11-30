@@ -22,6 +22,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -29,6 +30,7 @@ import android.widget.Toast;
 
 import com.example.aplicacaofinal.R;
 import com.example.aplicacaofinal.databinding.ActivityCadastrarObjetoBinding;
+import com.example.aplicacaofinal.model.Objeto;
 
 
 import java.io.ByteArrayOutputStream;
@@ -39,6 +41,7 @@ import java.util.Calendar;
 
 public class CadastrarObjetoActivity extends AppCompatActivity {
     private EditText campoTitulo, campoDescricao, campoValor;
+    private Button btnCadastrar;
     private ActivityCadastrarObjetoBinding binding;
     private static final int PERMISSION_REQUEST_CODE = 200;
     static final int GALLERY = 2;
@@ -47,6 +50,7 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
     private static final String IMAGE_DIRECTORY = "/camera2022";
 
     private Spinner campoSituacao, campoCategoria;
+    private Objeto objeto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,10 +81,30 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
             }
         });
     }
+    public void validarDadosObjeto(View view){
+       objeto = configurarObjeto();
+       objeto.salvar();
+    }
+    public void salvarObjeto(){
 
-    public void salvarObjeto(View view){
+    }
+
+
+    private Objeto configurarObjeto(){
+        String situacao = campoSituacao.getSelectedItem().toString();
+        String categoria = campoCategoria.getSelectedItem().toString();
+        String titulo = campoTitulo.getText().toString();
         String valor = campoValor.getText().toString();
-        Log.d("salvar","salvarObjeto: " + valor);
+        String descricao = campoDescricao.getText().toString();
+
+        Objeto objeto= new Objeto();
+        objeto.getIdObjeto();
+        objeto.setSituacao(situacao);
+        objeto.setCategoria(categoria);
+        objeto.setTitulo(titulo);
+        objeto.setValor(valor);
+        objeto.setDescricao(descricao);
+        return objeto;
     }
 
     private void carregarDadosSpinner(){
@@ -107,6 +131,7 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
         campoValor = findViewById(R.id.editValor);
         campoSituacao = findViewById(R.id.spinnerSituacao);
         campoCategoria = findViewById(R.id.spinnerCategoria);
+        btnCadastrar = findViewById(R.id.buttonCadastrar);
     }
 
     @Override
