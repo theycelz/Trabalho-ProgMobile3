@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -105,6 +107,12 @@ public class MeusObjetosActivity extends AppCompatActivity {
 
             Intent intentCadastrar = new Intent(MeusObjetosActivity.this, CadastrarObjetoActivity.class);
             startActivity(intentCadastrar);
+            return true;
+        } else if(id==R.id.op_escuro) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            return true;
+        } else if(id==R.id.op_claro){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             return true;
         } else if (id == R.id.menu_sair) {
 

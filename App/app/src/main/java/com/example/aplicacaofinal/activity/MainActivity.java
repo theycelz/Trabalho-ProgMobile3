@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                                                 Intent intent = new Intent(MainActivity.this, MeusObjetosActivity.class);
                                                 startActivity(intent);
                                             }else{
-                                                Toast.makeText(getApplicationContext(), "Erro ao fazer login: " +task.getException(), Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(getApplicationContext(), "E-mail ou Senha incorretos. Verifique se digitou corretamente.", Toast.LENGTH_SHORT).show();
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.erro);
                                                 mediaPlayer.start();
                                             }

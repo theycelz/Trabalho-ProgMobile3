@@ -27,4 +27,7 @@
         <item>Ventilador</item>
         <item>Outros</item>
     </string-array>
+
+    <string name="escuro">Modo Escuro</string>
+    <string name="claro">Modo Claro</string>
 </resources>
