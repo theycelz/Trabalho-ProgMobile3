@@ -81,24 +81,16 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
             }
         });
     }
-    public void validarDadosObjeto(View view){
-       objeto = configurarObjeto();
-       objeto.salvar();
-    }
-    public void salvarObjeto(){
-
-    }
 
 
-    private Objeto configurarObjeto(){
+    private Objeto configurarObjeto() {
         String situacao = campoSituacao.getSelectedItem().toString();
         String categoria = campoCategoria.getSelectedItem().toString();
         String titulo = campoTitulo.getText().toString();
         String valor = campoValor.getText().toString();
         String descricao = campoDescricao.getText().toString();
 
-        Objeto objeto= new Objeto();
-        objeto.getIdObjeto();
+        Objeto objeto = new Objeto();
         objeto.setSituacao(situacao);
         objeto.setCategoria(categoria);
         objeto.setTitulo(titulo);
@@ -107,8 +99,30 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
         return objeto;
     }
 
+    public void validarDadosObjeto(View view) {
+
+        objeto = configurarObjeto();
+
+        if (!objeto.getSituacao().isEmpty()) {
+            if (!objeto.getCategoria().isEmpty()) {
+                if (!objeto.getTitulo().isEmpty()) {
+                    if (!objeto.getValor().isEmpty()) {
+                        if (!objeto.getDescricao().isEmpty()) {
+                            objeto.getIdObjeto();
+                            objeto.salvar();
+                        } else { exibirMensagemErro("Preencha o campo Descrição"); }
+                    } else { exibirMensagemErro("Preencha o campo Valor"); }
+                } else { exibirMensagemErro("Preencha o campo Título"); }
+            } else { exibirMensagemErro("Preencha o campo Categoria"); }
+        } else { exibirMensagemErro("Preencha o campo Situação"); }
+    }
+
+    private void exibirMensagemErro(String texto){
+        Toast.makeText(this, texto, Toast.LENGTH_SHORT).show();
+    }
+
     private void carregarDadosSpinner(){
-        //Inflando spinner para situção dos objetos
+        //Inflando spinner para situação dos objetos
         String [] situacao = getResources().getStringArray(R.array.situacao);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, situacao);
@@ -289,7 +303,5 @@ public class CadastrarObjetoActivity extends AppCompatActivity {
                 .create()
                 .show();
     }
-
-
 
 }

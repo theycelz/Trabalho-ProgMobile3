@@ -16,7 +16,7 @@ public class Objeto {
 
     public Objeto() {
         DatabaseReference objetoref = ConfiguracaoFirebase.getFirebase().child("meus_objetos");
-        setIdObjeto(objetoref.push().getKey());
+        setIdObjeto( objetoref.push().getKey() );
     }
 
     public void salvar(){
@@ -73,11 +73,4 @@ public class Objeto {
         this.descricao = descricao;
     }
 
-    public List<String> getFotos() {
-        return fotos;
-    }
-
-    public void setFotos(List<String> fotos) {
-        this.fotos = fotos;
-    }
 }
